@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.AwesomeDashboard">
+        
+             <div >
+
+                 <Layout className="'o_dashboard'" display="{ controlPanel: { 'top-right' : true, 'bottom-right': true }, }" >
+                     
+                    <t t-set-slot="control-panel-create-button">
+                        <button t-on-click="ViewLead" type="object" class="btn btn-primary" title="lead">Lead</button> 
+                        <button t-on-click="ViewCustomer" type="object" class="btn btn-primary" title="customer">Customers</button>
+                    </t>
+
+                           
+                </Layout>
+                <div>
+              <DashItem size="'1'">
+                <p>
+                    Helo there
+                </p>
+              </DashItem>
+
+              <DashItem size="'2'">
+                <p>
+                    Helo there
+                </p>
+              </DashItem>
+              </div>
+                
+            </div>
+            
+        
+    
+    </t>
+
+</templates>
