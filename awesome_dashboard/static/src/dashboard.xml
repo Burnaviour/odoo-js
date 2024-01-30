@@ -14,19 +14,33 @@
 
                            
                 </Layout>
-                <div>
-              <DashItem size="'1'">
+              <t t-set="index" t-value="0"/>
+              <t t-foreach="this.state.data" t-as="d" t-key="index">
+                <DashItem size="'1'" title="'test'">
+                  <p>
+                      Helo there
+                  </p>
+                </DashItem>
+                <t t-set="index" t-value="index+1"/>
+              </t>
+      <!-- <DashItem size="'1'" title="'Some Title'">
                 <p>
                     Helo there
                 </p>
               </DashItem>
 
-              <DashItem size="'2'">
+              <DashItem size="'2'" title="'Some Title1'">
+                
                 <p>
-                    Helo there
+                    Helo there2
                 </p>
               </DashItem>
-              </div>
+              <DashItem size="'1'" title="'Some Title2'">
+                
+                <p>
+                    Helo there3
+                </p>
+              </DashItem> -->
                 
             </div>
             

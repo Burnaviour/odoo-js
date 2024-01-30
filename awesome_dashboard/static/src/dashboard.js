@@ -5,6 +5,7 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { useService } from "@web/core/utils/hooks";
 import { DashItem } from "./dashboarditem";
+const {onWillStart,useState } = owl  
 
 
 class AwesomeDashboard extends Component {
@@ -12,12 +13,17 @@ class AwesomeDashboard extends Component {
 
     setup() {
         this.action = useService("action");
+        this.rpc = useService("rpc");
+        this.state = useState({
+            data:[]
+        })
+        onWillStart(async () => {
+            const result = await this.rpc("/awesome_dashboard/statistics", {a: 1, b: 2});
+            this.state.data = result
+            console.log("result", this.state.data.average_quantity);
+         });
 
        
-     }
-     get service(){
-        const value=this.env.services.shared_state
-        return value
      }
      async ViewCustomer(e) {
         // let action_id = await this.orm.searchRead(
