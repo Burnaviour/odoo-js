@@ -21,8 +21,6 @@ class AwesomeDashboard(http.Controller):
             'nb_new_orders': the number of new orders, this month
             'total_amount': the total amount of orders, this month
         """
-        print(self)
-
         return {
             "average_quantity": random.randint(4, 12),
             "average_time": random.randint(4, 123),
