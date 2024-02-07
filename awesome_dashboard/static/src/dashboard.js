@@ -5,6 +5,7 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { useService } from "@web/core/utils/hooks";
 import { DashItem } from "./dashboarditem";
+import { PieChart } from "./Piechart";
 const {onWillStart,useState } = owl  
 
 
@@ -53,5 +54,5 @@ class AwesomeDashboard extends Component {
 
 
 
-AwesomeDashboard.components = { Layout,DashItem};
+AwesomeDashboard.components = { Layout,DashItem,PieChart};
 registry.category("actions").add("awesome_dashboard.dashboard", AwesomeDashboard);

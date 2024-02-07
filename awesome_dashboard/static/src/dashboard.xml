@@ -5,7 +5,7 @@
         
              <div >
 
-                 <Layout className="'o_dashboard'" display="{ controlPanel: { 'top-right' : true, 'bottom-right': true }, }" >
+                 <Layout  className="'o_dashboard h-100'" display="{ controlPanel: { 'top-right' : true, 'bottom-right': true }, }" >
                      
                     <t t-set-slot="control-panel-create-button">
                         <button t-on-click="ViewLead" type="object" class="btn btn-primary" title="lead">Lead</button> 
@@ -14,15 +14,47 @@
 
                            
                 </Layout>
-              <t t-set="index" t-value="0"/>
+                <DashItem  title="'the average number of t-shirts by order'">
+               
+
+                    <p><t t-out="this.state.data.average_quantity"/></p>
+                 
+                </DashItem>
+                <DashItem  title="'the average number of t-shirts by order'">
+                  <p>
+                    
+                    <t t-out="this.state.data.average_time"/>
+                  </p>
+                </DashItem>
+                <DashItem  title="'the number of cancelled orders'">
+                  <p>
+                    
+                    <t t-out="this.state.data.nb_cancelled_orders"/>
+                  </p>
+                </DashItem>
+                <DashItem title="'the number of new orders, this month'">
+                  <p>
+                    
+                    <t t-out="this.state.data.nb_new_orders"/>
+                  </p> 
+                </DashItem>
+                <DashItem  title="'the total amount of orders, this month'">
+                  <p>
+                    
+                    <t t-out="this.state.data.total_amount"/>
+                  </p> 
+                </DashItem>
+                <!-- <PieChart /> -->
+      <!-- create loop for multiple dash items -->
+      <!-- <t t-set="index" t-value="0"/>
               <t t-foreach="this.state.data" t-as="d" t-key="index">
-                <DashItem size="'1'" title="'test'">
+                <DashItem  size="this.state.average_quantity" title="'the average number of t-shirts by order'">
                   <p>
                       Helo there
                   </p>
                 </DashItem>
                 <t t-set="index" t-value="index+1"/>
-              </t>
+              </t> -->
       <!-- <DashItem size="'1'" title="'Some Title'">
                 <p>
                     Helo there
