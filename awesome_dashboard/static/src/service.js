@@ -6,12 +6,17 @@ start(env) {
    let state = {};
 
    return {
-      getValue(key) {
-      return state[key];
-      },
-      setValue(key, value) {
-      state[key] = value;
-      },
+      string: "shared_state",
+      boolean:true,
+      float: 0.0,
+      array:[1,2,3,5],
+      object: {'a':1, 'b':2},
+      "function":()=>{
+         console.log("Hello from shared state");
+         return "service test"
+      }
+      
+      
    };
 },
 };
