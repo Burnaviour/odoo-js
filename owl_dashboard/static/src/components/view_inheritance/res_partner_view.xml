@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <!-- <t t-name="owl_dashboard.res_partner_button_view1" t-inherit="web.ListView.Buttons" owl="1">
+    <xpath expr="//button[contains(@class,'o_list_button_save')]" position="before">
+      <button class="btn btn-primary ms-2">View Sales</button>
+    </xpath>
+  </t> -->
+  <t t-name="owl_dashboard.res_partner_button_view2" t-inherit="web.ListView" owl="1">
+    <xpath expr="//button[contains(@class,'o_list_button_add')]" position="after">
+      <button class="btn btn-secondary ms-2" t-on-click="openSales">View Sales</button>
+    </xpath>
+  </t>
+</templates>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl_dashboard.MapRnderer" owl="1">
+        <div t-ref="map" style="height:90vh"></div>
+    </t>
+</templates>

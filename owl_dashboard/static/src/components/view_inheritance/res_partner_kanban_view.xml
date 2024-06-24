@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <!-- <t t-name="owl_dashboard.res_partner_button_view1" t-inherit="web.ListView.Buttons" owl="1">
+    <xpath expr="//button[contains(@class,'o_list_button_save')]" position="before">
+      <button class="btn btn-primary ms-2">View Sales</button>
+    </xpath>
+  </t> -->
+  <t t-name="owl_dashboard.res_partner_button_kanban" t-inherit="web.KanbanView" owl="1">
+    <xpath expr="//t[contains(@t-if,'canCreate')]" position="after">
+      <button class="btn btn-secondary ms-2" t-on-click="openSales">View Sales</button>
+    </xpath>
+
+    <xpath expr="//Layout" position="attributes">
+      <attribute name="className">model.useSampleModel ? 'o_view_sample_data' : '' + "d-flex"</attribute>
+    </xpath>
+    <xpath expr="//t[contains(@t-component,'props.Renderer')]" position="before">
+      <div class="p-3  oe_sidebar_panel" aria-current="true">
+        <h2>
+          Customer Locations
+        </h2>
+        <div class="list-group">
+          <t t-foreach="states" t-as="c" t-key="c.state_id[0]">
+            <t t-if="c.state_id === false">
+              <a href="#" class="list-group-item" t-on-click="()=>this.selectLocation(c.state_id)">
+                <span>None</span>
+                <span class="badge rounded-pill bg-primary text-white">
+                  <t t-out="c.state_id_count" />
+                </span>
+              </a>
+
+            </t>
+            <t t-else="">
+              <a href="#" class="list-group-item" t-on-click="()=>this.selectLocation(c.state_id)">
+                <span
+                  t-esc="c.state_id[1]" />
+                <span class="badge rounded-pill bg-primary text-white">
+                  <t t-out="c.state_id_count" />
+                </span>
+              </a>
+
+            </t>
+
+
+          </t>
+        </div>
+      </div>
+
+    </xpath>
+
+  </t>
+</templates>
